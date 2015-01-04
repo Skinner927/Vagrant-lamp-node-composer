@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
+#based off of:
+#https://github.com/panique/vagrant-lamp-bootstrap/blob/master/bootstrap.sh
+
 # Use single quotes instead of double quotes to make it work with special-character passwords
-PASSWORD='12345678'
-PROJECTFOLDER='myproject'
+PASSWORD='root'
+PROJECTFOLDER='webroot'
 
 # create project folder
 sudo mkdir "/var/www/html/${PROJECTFOLDER}"
@@ -55,3 +58,10 @@ sudo apt-get -y install git
 # install Composer
 curl -s https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
+
+#install Node
+apt-get install nodejs
+apt-get install npm
+
+#install Yeoman
+npm install -g yo
