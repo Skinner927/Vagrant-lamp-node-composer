@@ -15,6 +15,10 @@ apt-get -y upgrade
 apt-get install -y apache2
 apt-get install -y php5
 
+# install xdebug and set php.ini to development
+apt-get install -y php5-xdebug
+cp /usr/share/php5/php.ini-development /etc/php5/apache2/php.ini
+
 # install mysql and give password to installer
 debconf-set-selections <<< "mysql-server mysql-server/root_password password $PASSWORD"
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $PASSWORD"
