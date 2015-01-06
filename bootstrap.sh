@@ -38,6 +38,10 @@ VHOST=$(cat <<EOF
         AllowOverride All
         Require all granted
     </Directory>
+    
+    LogLevel warn
+    ErrorLog /var/log/apache2/error.log
+    CustomLog /var/log/apache2/access.log combined
 </VirtualHost>
 EOF
 )
